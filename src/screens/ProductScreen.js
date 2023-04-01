@@ -40,7 +40,7 @@ export default function ProductScreen({match} ) {
 
             <Col md={3} >
                 <Card>
-                    <ListGroupItem variant='flush'>
+                    <ListGroup variant='flush'>
                         <ListGroup.Item>
                             <Row>
                                 <Col> Price:  </Col>
@@ -54,11 +54,26 @@ export default function ProductScreen({match} ) {
                             <Row>
                                 <Col> Status:  </Col>
                                 <Col> 
-                                    In Stock
+                                    {product.status === "Mas Vendido" ? 'Mas Vendido' : "En Stock"}
                                 </Col>
                             </Row>
                         </ListGroup.Item>
-                    </ListGroupItem>
+
+                        <ListGroup.Item>
+                            <Row>
+                                <Col> Stock:  </Col>
+                                <Col> 
+                                    {product.countInStock > 0  ? 'In Stock' : "Out of Stock"}
+                                </Col>
+                            </Row>
+                        </ListGroup.Item> 
+                    
+
+                        <ListGroup.Item>
+                            <Button className='btn-block' disabled={product.countInStock === 0} type='button'> Add to Cart </Button>
+                        </ListGroup.Item>
+                    </ListGroup>
+                   
                 </Card>
             </Col>
         </Row>
