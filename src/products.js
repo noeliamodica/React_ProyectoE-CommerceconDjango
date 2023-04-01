@@ -6,7 +6,7 @@
             "base": "Mix de verdes",
             "dressing": "Ranch",
             "description": "Mix de verdes, pollo, huevo, zanahoria, queso sardo rayado, tomates cherrys y aderezo ranch.",
-            "image": "/img/Clásica.jepg",
+            "image": "/img/Clásica.jpg",
             "price": 850,
             "status": "MasVendido"
         },
@@ -16,7 +16,7 @@
             "base": "Rúcula y fideos(penne rigatti)",
             "dressing": "Mostaza y miel",
             "description": "Rúcula, penne rigatti, pollo, tomates secos, nueces, queso azul y aderezo de mostaza y miel.",
-            "image": "/img/Cala.jepg",
+            "image": "/img/Cala.jpg",
             "price": 850,
             "status": "MasVendido"
         },
@@ -26,7 +26,7 @@
             "base": "Mix de verdes",
             "dressing": "Caesar",
             "description": "Mix de verdes, pollo, croûtons, queso sardo rayado, tomates cherrys y aderezo caesar.",
-            "image": "/img/Caesar.jepg",
+            "image": "/img/Caesar.jpg",
             "price": 850,
             "status": "MasVendido"
         },
@@ -36,7 +36,7 @@
             "base": "Mix de verdes",
             "dressing": "Caesar",
             "description": "Mix de verdes, pollo rebozado con pan rallado y copos de maiz, croûtons, queso sardo rayado, tomates cherrys y aderezo caesar.",
-            "image": "/img/Crispy.jng",
+            "image": "/img/Crispy.jpg",
             "price": 850,
             "status": "MasVendido"
         },
@@ -46,7 +46,7 @@
             "base": "Rúcula y fideos(penne rigatti)",
             "dressing": "Reducción de aceto balsámico",
             "description": "Rúcula, penne rigatti, pastrón feteado, queso tybo en cubos, morron rojo de conserva, nueces y reducción dulce de aceto balsámico.",
-            "image":  "/img/Pastron.jng",
+            "image":  "/img/Salami.jpg",
             "price": 870
         },
         {
@@ -55,7 +55,7 @@
             "base": "Rúcula",
             "dressing": "Vinagreta (Oliva, Aceto, Vinagre y Pimienta)",
             "description": "Rúcula, pollo, queso azul, nueces, peras en almíbar y vinagreta.",
-            "image":  "/img/Peras.jng",
+            "image":  "/img/Peras.jpg",
             "price": 850
         },
         {
@@ -73,7 +73,7 @@
             "base": "Mix de verdes",
             "dressing": "Mostaza y miel",
             "description": "Mix de verdes, pollo, queso brie, tomates cherrys, croûtons, nueces, y aderezo de mostaza y miel.",
-            "image": "/img/Brie.jepg",
+            "image": "/img/Brie.jpg",
             "price": 870
         },
         {
