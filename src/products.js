@@ -89,7 +89,7 @@
             "countInStock": 0,
         },
         {
-            "id": "10",
+            "id": 10,
             "name": "Atún",
             "base": "Rúcula",
             "dressing": "Vinagreta",
@@ -100,7 +100,7 @@
             "countInStock": 3,
         },
         {
-            "id": "11",
+            "id": 11,
             "name": "Frutilla",
             "base": "Rúcula",
             "dressing": "Reducción de Aceto Balsámico",
