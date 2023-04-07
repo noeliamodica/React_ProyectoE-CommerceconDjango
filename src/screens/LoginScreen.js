@@ -1,29 +1,66 @@
-import React, { useState, useEffect} from 'react'
-import { Link} from 'react-router-dom'
-import {Form, Row, Button, Col }  from 'react-bootstrap';
-import { useSelector, useDispatch } from 'react-redux'
+import React, { useRef } from 'react';
+import { Link, redirect } from 'react-router-dom';
+import { Form, Row, Button, Col }  from 'react-bootstrap';
+import { useSelector, useDispatch } from 'react-redux';
 import FormContainer from '../components/FormContainer';
+import axios from 'axios';
+import { setUser } from '../reducers/user/userSlice';
 
 export default function LoginScreen() {
-    const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
+   
+    const fullnameField = useRef(null);
+    const emailField = useRef(null);
+    const passwordField = useRef(null);
 
-    const submitHandler = (e)=> {
-        e.preventDefault()
-        console.log('Submitted')
-    }
+    const dispatch = useDispatch();
+
+    const submitHandler = (e) => {
+        e.preventDefault();
+        const email = emailField.current.value;
+        const password = passwordField.current.value;
+        axios.get(`http://localhost:3000/users?email=${email}&password=${password}`)
+        .then(response => {
+          //me traigo el usuario buscado
+          const user = response.data[0];
+
+          if (user) {
+            if (user.password === passwordField.current.value) {
+              console.log("Credenciales válidas");
+              dispatch(setUser({
+                email: user.email,
+                fullName: `${user.first_name} ${user.last_name}`,
+                token: Date.now(),
+              }));
+            }
+          }
+        })
+        .catch(error => {
+            console.error("algo fallo");
+        });
+    };
+    
+
+   
 
   return (
     <FormContainer>
         <h1> Sign In </h1>
         <Form onSubmit={submitHandler}>
+        <Form.Group controlId='fullname'>
+                <Form.Label> FullName </Form.Label>
+                <Form.Control 
+                    type='fullname'
+                    placeholder='Enter fullname'
+                    ref={fullnameField}
+                >
+                </Form.Control>
+            </Form.Group>
             <Form.Group controlId='email'>
                 <Form.Label> Email Address </Form.Label>
                 <Form.Control 
                     type='email'
                     placeholder='Enter email'
-                    value={email}
-                    onChange={(e)=> setEmail(e.target.value) }
+                    ref={emailField}
                 >
                 </Form.Control>
             </Form.Group>
@@ -33,8 +70,7 @@ export default function LoginScreen() {
                 <Form.Control 
                     type='password'
                     placeholder='Enter password'
-                    value={password}
-                    onChange={(e)=> setPassword(e.target.value) }
+                    ref={passwordField}
                 >
                 </Form.Control>
             </Form.Group>
@@ -45,7 +81,9 @@ export default function LoginScreen() {
 
         <Row className='py-3'>
             <Col>
-                
+                New Customer? <Link 
+                to={redirect ? `/register'=${redirect}` : '/register'}> 
+                Register </Link>
             </Col>
         </Row>
     </FormContainer>
