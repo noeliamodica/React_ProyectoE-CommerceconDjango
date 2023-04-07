@@ -25,6 +25,7 @@ export default function ProductScreen({ history } ) {
 
   const addToCartHandler = ()=>{
     console.log ('Add', id)
+    
     navigate(`/cart/id?qty=${qty}`)
   }
 
