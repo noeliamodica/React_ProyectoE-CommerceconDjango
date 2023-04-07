@@ -18,7 +18,7 @@ function App() {
         <Routes>
           <Route path='/' Component={HomeScreen} exact/>
           
-          <Route path='/product/:id' Component={ProductScreen} exact/>
+          <Route path='/product/:id' Component={ProductScreen} />
           </Routes>
         </Container>
       </main>
